@@ -19,9 +19,6 @@
         <script>
             function filter(){
                 var exp = parseInt(document.getElementById("exp").value);
-                if(isNaN(exp)){
-                    exp = parseInt('0');
-                }
                 var markedCheckbox = document.querySelectorAll('input[type="checkbox"]:checked');  
                 var trs = document.querySelectorAll('tr[class="vals"]');
                 for (var tr of trs){
@@ -31,8 +28,7 @@
                     for(let tr of trs){
                         let temp_exp = parseInt(tr.id.split(",")[2]);
 
-                        console.log(exp);
-                        if(temp_exp<=exp){
+                        if(temp_exp<=exp || isNaN(exp)){
                             if(tr.id.includes(checkbox.value)){
                                 tr.style.visibility='visible';
                                 document.body.append(checkbox.value + ' ');  
