@@ -3,94 +3,61 @@
     <head>
         <!-- <meta http-equiv="refresh" content="1"> -->
         <title>It Referals</title>
-        <style>
-            table{
-                width: 100%;
-                text-align: center;
-                border: 2px solid black;
-            }
-            td,th{
-                border: 2px solid black;
-            }
-            ul{
-                text-align: left;
-            }
-        </style>
-        <script>
-            function filter(){
-                var exp = parseInt(document.getElementById("exp").value);
-                var markedCheckbox = document.querySelectorAll('input[type="checkbox"]:checked');  
-                var trs = document.querySelectorAll('tr[class="vals"]');
-                for (var tr of trs){
-                    tr.style.visibility='hidden';
-                }
-                for (var checkbox of markedCheckbox) {  
-                    for(let tr of trs){
-                        let temp_exp = parseInt(tr.id.split(",")[2]);
-
-                        if(temp_exp<=exp || isNaN(exp)){
-                            if(tr.id.includes(checkbox.value)){
-                                tr.style.visibility='visible';
-                                document.body.append(checkbox.value + ' ');  
-                            }
-                        }
-                    }
-                }  
-                // var temp = document.querySelectorAll('tr > td > ul > li.innerHTML="python"]');
-                // console.log(temp);
-            }
-
-        </script>
+        <link rel="stylesheet" href="main.css">
+        <script src="main.js"></script>
     </head>
     <body>
         <p id="ouput"></p>
-        <div id="filterbar">
-            Enter no of Experiance : <input type="number" id="exp"><br>
-            Filter by skills : <br>
-            <input type="checkbox" name="skills" value="java"> java <br>
-            <input type="checkbox" name="skills" value="python"> python <br>
-            <input type="checkbox" name="skills" value="html"> html <br>
-            <input type="checkbox" name="skills" value="css"> css <br>
-            <button id="btn" onclick="filter()">Filter</button>
+        <br>
+        <div>
+            <div id="sidebar">
+                Enter no of Experiance : <input type="number" id="exp"><br>
+                Filter by skills : <br>
+                <input type="checkbox" name="skills" value="java"> java <br>
+                <input type="checkbox" name="skills" value="python"> python <br>
+                <input type="checkbox" name="skills" value="html"> html <br>
+                <input type="checkbox" name="skills" value="css"> css <br>
+                <button id="btn" onclick="filter()">Filter</button>
+            </div>
+            <div id="mainbody">
+                <table>
+                    <tr>
+                        <th>s.no</th>
+                        <th>Min Experiance</th>
+                        <!-- <th>Max Experiance</th> -->
+                        <th>Skills</th>
+                        <th>Blank</th>
+                    </tr>
+                    <tr id="0,1,2,3,java,html,python" class="vals">
+                        <td>1</td>
+                        <td>2</td>
+                        <!-- <td>3</td> -->
+                        <td>
+                            <ul>
+                                <li>java</li>
+                                <li>html</li>
+                                <li>python</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button>Apply</button>
+                        </td>
+                    </tr>
+                    <tr id="0,1,2,3,python" class="vals">
+                        <td>1</td>
+                        <td>2</td>
+                        <!-- <td>3</td> -->
+                        <td>
+                            <ul>
+                                <li>python</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button>Apply</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <br><br>
-        <table>
-            <tr>
-                <th>s.no</th>
-                <th>Min Experiance</th>
-                <!-- <th>Max Experiance</th> -->
-                <th>Skills</th>
-                <th>Blank</th>
-            </tr>
-            <tr id="0,1,2,3,java,html,python" class="vals">
-                <td>1</td>
-                <td>2</td>
-                <!-- <td>3</td> -->
-                <td>
-                    <ul>
-                        <li>java</li>
-                        <li>html</li>
-                        <li>python</li>
-                    </ul>
-                </td>
-                <td>
-                    <button>Apply</button>
-                </td>
-            </tr>
-            <tr id="0,1,2,3,python" class="vals">
-                <td>1</td>
-                <td>2</td>
-                <!-- <td>3</td> -->
-                <td>
-                    <ul>
-                        <li>python</li>
-                    </ul>
-                </td>
-                <td>
-                    <button>Apply</button>
-                </td>
-            </tr>
-        </table>
-
     </body>
 </html>
