@@ -4,7 +4,12 @@ function filter(){
     var selectedCatagory = document.querySelectorAll('select[name="catagory"]')[0].options;  
     var trs = document.querySelectorAll('tr[class="vals"]');
     for (var tr of trs){
-        tr.style.visibility='hidden';
+        if (selectedSkills.length == 0){
+            tr.style.visibility='visible';
+        }
+        else{
+            tr.style.visibility='hidden';
+        }
     }
     selectedCatagory = selectedCatagory[selectedCatagory.selectedIndex].text;
     for (var skill of selectedSkills) {  
@@ -17,7 +22,7 @@ function filter(){
             let temp_exp = parseInt(tr.id.split(",")[1]);
             console.log(exp>=temp_exp)
             if((selectedCatagory == temp_catagory || selectedCatagory == "others") && (exp>=temp_exp || isNaN(exp))){
-                if(tr.id.includes(skill.value)){
+                if(tr.id.includes(skill.value) ){
                     tr.style.visibility='visible';
                     document.body.append(skill.value + ' ');  
                 }
