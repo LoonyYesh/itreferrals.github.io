@@ -6,14 +6,20 @@ div{
 }
 body {
     background-color: powderblue;
+    margin: 0%;
 }
 h1{
     text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0%;
+    padding: 1%;
+    margin-bottom: 2%;
 }
-hr{
+/* hr{
     border-color: black;
     margin-bottom: 1%;
-}
+} */
 table{
     width: 100%;
     text-align: center;
@@ -35,10 +41,19 @@ div{
 #sidebar{
     float: left;
     width: 25%;
-    border-right: 2px solid black;
+    /* border-right: 2px solid black; */
     margin-left: 1%;
+    background-color: #847975;
+    color:white ;
+    padding: 1%;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
 }
 #mainbody{
+    position: absolute;
+    padding-left: 30%;
+    padding-right: 2%;
     margin-left: 1%;
     width:70%;
 }

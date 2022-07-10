@@ -6,13 +6,17 @@
         <link rel="stylesheet" href="main.css">
         <script src="main.js"></script>
     </head>
-    <body>
-        
+    <body>        
         <h1>IT Job Referrals</h1>
-        <hr>
         <div>
             <div id="sidebar">
                 Enter no of Experiance : <input type="number" id="exp"><br>
+                Filter by Catagory:<br>
+                <select name="catagory">
+                    <option value="softwareTesting">softwareTesting</option>
+                    <option value="softwareDevlopment">softwareDevlopment</option>
+                    <option value="others" selected="true">others</option>
+                </select><br>
                 Filter by skills : <br>
                 <input type="checkbox" name="skills" value="java"> java <br>
                 <input type="checkbox" name="skills" value="python"> python <br>
@@ -21,43 +25,47 @@
                 <button id="btn" onclick="filter()">Filter</button>
             </div>
             <div id="mainbody">
+
+
                 <table>
+
                     <tr>
-                        <th>s.no</th>
+                        
                         <th>Min Experiance</th>
-                        <!-- <th>Max Experiance</th> -->
+                        <th>Max Experiance</th>
                         <th>Skills</th>
                         <th>Blank</th>
                     </tr>
-                    <tr id="0,1,2,3,java,html,python" class="vals">
+                
+                    <tr id='softwareDevlopment,1,3,java,html,python' class='vals'>
                         <td>1</td>
-                        <td>2</td>
-                        <!-- <td>3</td> -->
+                        <td>3</td>
                         <td>
                             <ul>
-                                <li>java</li>
-                                <li>html</li>
-                                <li>python</li>
+                                <li>java<li>
+                                <li>html<li>
+                                <li>python<li>
                             </ul>
                         </td>
-                        <td>
-                            <button>Apply</button>
-                        </td>
-                    </tr>
-                    <tr id="0,1,2,3,python" class="vals">
+                    </tr><tr id='softwareDevlopment,1,3,python' class='vals'>
                         <td>1</td>
-                        <td>2</td>
-                        <!-- <td>3</td> -->
+                        <td>3</td>
                         <td>
                             <ul>
-                                <li>python</li>
+                                <li>python<li>
                             </ul>
                         </td>
+                    </tr><tr id='marketing,3,5,something' class='vals'>
+                        <td>3</td>
+                        <td>5</td>
                         <td>
-                            <button>Apply</button>
+                            <ul>
+                                <li>something<li>
+                            </ul>
                         </td>
                     </tr>
                 </table>
+                              
             </div>
         </div>
     </body>
